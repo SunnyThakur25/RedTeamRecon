@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>readme.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///r%3A/2.Travail/1.Enseignement/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css"><link rel="stylesheet" href="file:///d%3A/rdaros/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css">
+</head>
+
+<body>
+    <p>RedTeamRecon<br>
+A powerful, open-source web reconnaissance tool designed for red team operations and penetration testing. RedTeamRecon combines stealthy scanning, vulnerability detection, and advanced visualizations with a modern GUI and CLI interface. Built with Python, it supports custom wordlists, proxies, payloads, CSRF token analysis, and adaptive rate limiting, making it suitable for both beginners and advanced security professionals.<br>
+Repository: github.com/SunnyThakur25/RedTeamReconAuthor: Sunny ThakurLicense: MIT</p>
+<p>Table of Contents</p>
+<p>Features<br>
+Project Structure<br>
+Getting Started<br>
+Prerequisites<br>
+Installation</p>
+<p>Usage<br>
+GUI Usage<br>
+CLI Usage</p>
+<p>Customization<br>
+For Beginners<br>
+For Advanced Users</p>
+<p>Contributing<br>
+Troubleshooting<br>
+License<br>
+Acknowledgments</p>
+<p>Features</p>
+<p>Stealth Mode: Proxy rotation, randomized headers, and adaptive rate limiting to evade detection.<br>
+Comprehensive Scanning: URL analysis, DNS records, subdomains, WHOIS, open ports, vulnerabilities, WAF detection, robots.txt, and sitemap parsing.<br>
+Vulnerability Detection: XSS, SQL injection, LFI, exposed directories/files, and CSRF token predictability.<br>
+Custom Inputs: Support for custom wordlists, proxies, and payloads (XSS, SQLi, LFI, directories).<br>
+Modern GUI: Streamlit-based interface with Plotly visualizations, Tailwind CSS, and a red team cyberpunk theme.<br>
+CLI Interface: Lightweight terminal-based scanning with JSON output and PDF reports.<br>
+Reporting: Generate detailed PDF reports with LaTeX, including vulnerabilities and CSRF analysis.<br>
+Extensible: Modular design allows easy addition of new features or payloads.<br>
+Lightweight ML: Uses scikit-learn for technology detection without heavy resource demands.</p>
+<p>Project Structure<br>
+RedTeamRecon/<br>
+├── src/<br>
+│   └── core.py           # Core scanning logic (AdvancedWebRecon class)<br>
+├── gui.py                # Streamlit-based GUI with visualizations<br>
+├── cli.py                # Command-line interface for terminal users<br>
+├── requirements.txt      # Python dependencies<br>
+├── scans.db              # SQLite database for scan history<br>
+├── report.tex            # LaTeX template for PDF reports<br>
+├── report.pdf            # Generated PDF report<br>
+└── scan_results.json     # JSON output of scan results</p>
+<p>core.py: Implements the AdvancedWebRecon class, handling all scanning tasks, proxy rotation, CSRF token analysis, and report generation.<br>
+gui.py: Provides a web-based interface with a dark, cyberpunk theme, featuring interactive charts for vulnerabilities, technologies, and CSRF tokens.<br>
+cli.py: Offers a terminal interface for quick scans, supporting all core.py features.<br>
+requirements.txt: Lists dependencies for easy installation.</p>
+<p>Getting Started<br>
+Prerequisites</p>
+<p>Python: Version 3.8 or higher.<br>
+Operating System: Linux, macOS, or Windows (Linux recommended for full compatibility).<br>
+Tools:<br>
+Git for cloning the repository.<br>
+LaTeX distribution (e.g., TeX Live) for PDF report generation.</p>
+<p>Internet Connection: Required for fetching free proxies and external data.</p>
+<p>Installation</p>
+<p>Clone the Repository:<br>
+git clone https://github.com/SunnyThakur25/RedTeamRecon.git<br>
+cd RedTeamRecon</p>
+<p>Set Up a Virtual Environment (recommended):<br>
+python -m venv venv<br>
+source venv/bin/activate  # On Windows: venv\Scripts\activate</p>
+<p>Install Python Dependencies:<br>
+pip install -r requirements.txt</p>
+<p>Install Playwright Browsers (for stealth mode):<br>
+playwright install</p>
+<p>Install External Tools:</p>
+<p>WAFW00F (WAF detection):git clone https://github.com/EnableSecurity/wafw00f.git<br>
+cd wafw00f &amp;&amp; python setup.py install<br>
+cd ..</p>
+<p>XSStrike (XSS scanning):git clone https://github.com/s0md3v/XSStrike.git<br>
+cd XSStrike &amp;&amp; pip install -r requirements.txt<br>
+cd ..</p>
+<p>sqlmap (SQL injection):pip install sqlmap</p>
+<p>Install LaTeX (for PDF reports):</p>
+<p>On Ubuntu/Debian:sudo apt-get install texlive-full</p>
+<p>On macOS (with Homebrew):brew install texlive</p>
+<p>On Windows: Install MiKTeX or TeX Live.</p>
+<p>Usage<br>
+RedTeamRecon supports two interfaces: a GUI for visual interaction and a CLI for terminal-based operations. Both leverage the same core functionality.<br>
+GUI Usage</p>
+<p>Start the GUI:<br>
+streamlit run gui.py</p>
+<p>Opens in your default browser (default: http://localhost:8501).</p>
+<p>Configure the Scan:</p>
+<p>Target URL: Enter the website to scan (e.g., https://example.com).<br>
+Stealth Mode: Enable for proxy rotation and evasion.<br>
+Brute-Force: Enable for aggressive subdomain/directory scanning.<br>
+Threads &amp; Rate Limit: Adjust for performance and rate limiting.<br>
+Wordlist: Choose default, upload a file (e.g., wordlist.txt), or generate a domain-specific wordlist.<br>
+Example wordlist.txt:admin<br>
+login<br>
+api</p>
+<p>Proxies: Use free proxies, upload a custom list (e.g., proxies.txt), or disable proxies.<br>
+Example proxies.txt:1.2.3.4:8080<br>
+5.6.7.8:3128</p>
+<p>Payloads: Upload custom payloads for XSS, SQLi, LFI, or directories (e.g., payloads.txt).<br>
+Example payloads.txt (for XSS):<script>alert(1)</script><br>
+&quot;&gt;<img src=x onerror=alert(1)></p>
+<p>Run the Scan:</p>
+<p>Click &quot;Start Scan&quot; to perform a full scan or specific tasks.<br>
+View results in tabs (Summary, Technologies, Vulnerabilities, etc.).<br>
+Visualize data with charts (e.g., vulnerability severity, CSRF token status).<br>
+Download results as JSON (scan_results.json) or PDF (report.pdf).</p>
+<p>Example:</p>
+<p>Scan https://example.com with stealth mode, custom wordlist, and free proxies.<br>
+Review vulnerabilities and CSRF token analysis in the GUI.</p>
+<p>CLI Usage</p>
+<p>Run a Scan:<br>
+python cli.py <url> [options]</p>
+<p>Common Commands:</p>
+<p>Full scan with PDF report:python cli.py https://example.com --stealth --report</p>
+<p>Subdomain scan with custom wordlist:python cli.py https://example.com --wordlist wordlist.txt --task subdomains</p>
+<p>Vulnerability scan with free proxies and custom payloads:python cli.py https://example.com --free-proxies --payloads payloads.txt --payload-type xss --task vulns</p>
+<p>Generate domain-specific wordlist:python cli.py https://example.com --generate-wordlist --task subdomains</p>
+<p>Options:</p>
+<p>--stealth: Enable stealth mode.<br>
+--no-brute: Disable brute-force.<br>
+--threads <n>: Set max threads (1-50).<br>
+--rate-limit <n>: Set requests per second (0.1-5.0).<br>
+--wordlist <file>: Custom wordlist file.<br>
+--generate-wordlist: Generate wordlist.<br>
+--proxies <file>: Custom proxy list file.<br>
+--free-proxies: Use free proxy pool.<br>
+--payloads <file>: Custom payloads file.<br>
+--payload-type <type>: Payload type (xss, sqli, lfi, dir).<br>
+--task <task>: Specific task (full, url, dns, subdomains, whois, ports, vulns, waf, robots, sitemap).<br>
+--output <file>: Output JSON file.<br>
+--report: Generate PDF report (full scan only).</p>
+<p>Output:</p>
+<p>Results printed to terminal in JSON format.<br>
+Saved to --output file (default: scan_results.json).<br>
+PDF report generated if --report is used (saved as report.pdf).</p>
+<p>Example:<br>
+python cli.py https://example.com --stealth --threads 20 --rate-limit 1.0 --task full --report</p>
+<p>Outputs results to scan_results.json and generates report.pdf.</p>
+<p>Customization<br>
+RedTeamRecon is designed to be extensible. Below are modification tips for beginners and advanced users.<br>
+For Beginners</p>
+<p>Add New Payloads:</p>
+<p>Edit payloads.txt and upload via GUI or CLI (--payloads).<br>
+Example: Add new XSS payload:<script>prompt(1)</script></p>
+<p>In core.py, payloads are loaded in _load_default_payloads or via load_custom_payloads.</p>
+<p>Modify Wordlists:</p>
+<p>Create a new wordlist.txt with custom entries (e.g., dashboard, panel).<br>
+Use GUI to upload or CLI with --wordlist.<br>
+Default wordlist is in core.py (_get_default_wordlist).</p>
+<p>Change GUI Theme:</p>
+<p>In gui.py, modify Tailwind CSS colors in the <style> block.<br>
+Example: Change red (#ff2d55) to blue (#4299e1):.main-header { color: #4299e1; text-shadow: 0 0 10px #4299e1; }</p>
+<p>Add new SVG icons in gui.py for buttons or headers.</p>
+<p>Adjust Scan Settings:</p>
+<p>In GUI, tweak threads and rate limit sliders.<br>
+In CLI, use --threads and --rate-limit.<br>
+In core.py, default values are set in AdvancedWebRecon.<strong>init</strong>.</p>
+<p>For Advanced Users</p>
+<p>Extend Scanning Features:</p>
+<p>Add new methods to core.py (e.g., for SSRF testing):def test_ssrf(self, url):<br>
+payloads = ['http://169.254.169.254/latest/meta-data/', 'http://localhost']<br>
+results = []<br>
+for payload in payloads:<br>
+test_url = f&quot;{url}?url={payload}&quot;<br>
+response = self.session.get(test_url, timeout=self.timeout, verify=False)<br>
+if &quot;instance-id&quot; in response.text:<br>
+results.append({&quot;type&quot;: &quot;SSRF&quot;, &quot;details&quot;: f&quot;Vulnerable to {payload}&quot;})<br>
+return results</p>
+<p>Integrate into get_website_vulnerabilities and GUI/CLI.</p>
+<p>Enhance Visualizations:</p>
+<p>In gui.py, add new Plotly charts (e.g., subdomain network graph):import plotly.graph_objects as go<br>
+def plot_subdomain_network(subdomains):<br>
+edges = [(s, urlparse(args.url).netloc) for s in subdomains]<br>
+fig = go.Figure(data=[go.Scatter(x=[0], y=[0], mode='markers+text', text=[urlparse(args.url).netloc])])<br>
+st.plotly_chart(fig)</p>
+<p>Call in the &quot;Subdomains&quot; tab.</p>
+<p>Add WAF Evasion:</p>
+<p>In core.py, modify _obfuscate_payload to include HTTP parameter pollution:def _obfuscate_payload(self, payload):<br>
+transformations = [<br>
+lambda x: f&quot;{x}&amp;test={x}&quot;,<br>
+lambda x: x.replace('&lt;', '%3C').replace('&gt;', '%3E'),<br>
+lambda x: x.replace('script', 'scr%69pt')<br>
+]<br>
+return random.choice(transformations)(payload)</p>
+<p>Database Enhancements:</p>
+<p>In core.py, add new tables to scans.db for payload or proxy history:def _init_db(self):<br>
+with sqlite3.connect(self.db_path) as conn:<br>
+cursor = conn.cursor()<br>
+cursor.execute(&quot;&quot;&quot;<br>
+CREATE TABLE IF NOT EXISTS payloads (<br>
+id INTEGER PRIMARY KEY AUTOINCREMENT,<br>
+type TEXT,<br>
+payload TEXT,<br>
+timestamp TEXT<br>
+)<br>
+&quot;&quot;&quot;)<br>
+conn.commit()</p>
+<p>Automate Scans:</p>
+<p>Create a script to schedule scans using cli.py:import schedule<br>
+import subprocess<br>
+def run_scan():<br>
+subprocess.run([&quot;python&quot;, &quot;cli.py&quot;, &quot;https://example.com&quot;, &quot;--report&quot;])<br>
+schedule.every().day.at(&quot;02:00&quot;).do(run_scan)<br>
+while True:<br>
+schedule.run_pending()<br>
+time.sleep(60)</p>
+<p>Add New Dependencies:</p>
+<p>Update requirements.txt for new libraries (e.g., tqdm for progress bars):tqdm&gt;=4.66.5</p>
+<p>Install: pip install -r requirements.txt.</p>
+<p>Contributing<br>
+Contributions are welcome! Follow these steps to contribute to RedTeamRecon:</p>
+<p>Fork the Repository:<br>
+git clone https://github.com/SunnyThakur25/RedTeamRecon.git<br>
+cd RedTeamRecon<br>
+git checkout -b feature/your-feature</p>
+<p>Make Changes:</p>
+<p>Modify core.py, gui.py, cli.py, or add new files.<br>
+Update requirements.txt if new dependencies are added.<br>
+Test changes thoroughly.</p>
+<p>Commit and Push:<br>
+git add .<br>
+git commit -m &quot;Add your-feature description&quot;<br>
+git push origin feature/your-feature</p>
+<p>Create a Pull Request:</p>
+<p>Go to github.com/SunnyThakur25/RedTeamRecon.<br>
+Submit a pull request with a clear description of changes.</p>
+<p>Code Guidelines:</p>
+<p>Follow PEP 8 for Python code.<br>
+Add comments for complex logic.<br>
+Ensure compatibility with Python 3.8+.<br>
+Test on Linux for full functionality.</p>
+<p>Issues:</p>
+<p>Report bugs or suggest features via GitHub Issues.</p>
+<p>Troubleshooting</p>
+<p>GUI Not Loading:</p>
+<p>Ensure Streamlit is installed: pip install streamlit.<br>
+Check port 8501 is free: lsof -i :8501 (Linux) or equivalent.<br>
+Run: streamlit run gui.py --server.port 8502.</p>
+<p>Playwright Errors:</p>
+<p>Reinstall browsers: playwright install.<br>
+Ensure dependencies: sudo apt-get install libnss3 libatk-bridge2.0-0 (Ubuntu).</p>
+<p>LaTeX Report Fails:</p>
+<p>Verify TeX Live installation: pdflatex --version.<br>
+Install missing packages: tlmgr install noto.</p>
+<p>Proxy Issues:</p>
+<p>Free proxies may be unreliable. Use premium proxies in proxies.txt.<br>
+Check proxy format: ip:port.</p>
+<p>Scan Errors:</p>
+<p>Increase --rate-limit or reduce --threads.<br>
+Enable --stealth for WAF evasion.<br>
+Check logs in terminal or GUI for details.</p>
+<p>Dependencies Conflict:</p>
+<p>Use a virtual environment: python -m venv venv.<br>
+Reinstall: pip install -r requirements.txt.</p>
+<p>For further assistance, open an issue on GitHub.</p>
+<p>License<br>
+This project is licensed under the MIT License. See LICENSE for details.</p>
+<p>Acknowledgments</p>
+<p>Libraries: Built with Streamlit, Plotly, BeautifulSoup, and more.<br>
+Community: Inspired by the cybersecurity and red team community.</p>
+<p>Happy Hacking!Follow @SunnyThakur25 for updates and new projects.</p>
+
+</body>
+
+</html>

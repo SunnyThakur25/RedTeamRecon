@@ -1,0 +1,14 @@
+requests>=2.31.0
+beautifulsoup4>=4.12.3
+tldextract>=5.1.2
+dnspython>=2.6.1
+python-whois>=0.9.4
+fake-useragent>=1.5.1
+playwright>=1.44.0
+nltk>=3.8.1
+scikit-learn>=1.5.0
+wafw00f>=2.2.0
+xsstrike>=3.1.5
+streamlit>=1.36.0
+plotly>=5.22.0
+latexmk>=1.0.5
