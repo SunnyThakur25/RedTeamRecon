@@ -2,7 +2,12 @@
 
 A powerful, open-source web reconnaissance tool designed for red team operations and penetration testing. RedTeamRecon combines stealthy scanning, vulnerability detection, and advanced visualizations with a modern GUI and CLI interface. Built with Python, it supports custom wordlists, proxies, payloads, CSRF token analysis, and adaptive rate limiting, making it suitable for both beginners and advanced security professionals.
 
-Repository: github.com/SunnyThakur25/RedTeamReconAuthor: Sunny ThakurLicense: MIT
+
+Repository: github.com/SunnyThakur25/RedTeamRecon
+
+Author: Sunny Thakur
+
+License: MIT
 
 Table of Contents
 
